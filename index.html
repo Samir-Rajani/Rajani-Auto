@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Auto Spare Parts - Online Store Genuine &amp; Aftermarket Car Parts | .COM</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="#" class="text-2xl font-bold text-red-600">Rajani Auto Parts</a>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#home" class="hover:text-red-600">Home</a>
+        <a href="#about" class="hover:text-red-600">About</a>
+        <a href="#parts" class="hover:text-red-600">Parts</a>
+        <a href="#contact" class="hover:text-red-600">Contact</a>
+      </nav>
+      <button class="md:hidden" id="menu-btn">
+        <i class="fas fa-bars text-gray-800 text-xl"></i>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <a href="#home" class="block px-4 py-2 hover:bg-red-50">Home</a>
+      <a href="#about" class="block px-4 py-2 hover:bg-red-50">About</a>
+      <a href="#parts" class="block px-4 py-2 hover:bg-red-50">Parts</a>
+      <a href="#contact" class="block px-4 py-2 hover:bg-red-50">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section with Form -->
+  <section id="home" class="bg-red-50">
+    <div class="container mx-auto px-4 py-16 flex flex-col-reverse md:flex-row items-center">
+      <div class="w-full md:w-1/2">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-red-600">Find Your Perfect Car Parts</h1>
+        <p class="mb-6">We supply genuine and aftermarket car parts across UAE. Submit your request below and we'll get back to you swiftly.</p>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white p-6 rounded-lg shadow-md">
+          <!-- Car Brand Dropdown -->
+          <label for="brand" class="block mb-2 text-gray-700">Car Brand</label>
+          <select name="brand" id="brand" required class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:border-red-300">
+            <option value="">Select Brand</option>
+            <option value="toyota">Toyota</option>
+            <option value="honda">Honda</option>
+            <option value="bmw">BMW</option>
+            <option value="mercedes">Mercedes-Benz</option>
+            <!-- Add more brands manually here -->
+          </select>
+
+          <!-- Car Model Dropdown -->
+          <label for="model" class="block mb-2 text-gray-700">Car Model</label>
+          <select name="model" id="model" required class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:border-red-300">
+            <option value="">Select Model</option>
+            <option value="corolla">Corolla</option>
+            <option value="camry">Camry</option>
+            <option value="civic">Civic</option>
+            <option value="accord">Accord</option>
+            <!-- Add more models manually here -->
+          </select>
+
+          <!-- END REPLACE -->
+
+          <!-- Parts Description (optional) -->
+          <label for="parts" class="block mb-2 text-gray-700">Car Part</label>
+          <textarea name="parts" id="parts" rows="1" placeholder="Specify exact parts or variants" class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:border-red-300 resize-none"></textarea>
+
+          <!-- Phone Number -->
+          <label for="phone" class="block mb-2 text-gray-700">Phone Number</label>
+          <input type="tel" name="phone" id="phone" placeholder="+971 50 000 0000" required class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:border-red-300">
+
+          <button type="submit" class="w-full bg-red-600 text-white py-2 rounded font-semibold hover:bg-red-700 transition">Submit Request</button>
+        </form>
+      </div>
+      <div class="w-full md:w-1/2 mb-8 md:mb-0">
+        <img src="home.png" alt="Car Parts" class="rounded">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl font-bold mb-6 text-red-600">Why Choose Us</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="p-6 border rounded-lg hover:shadow-lg transition">
+        <h3 class="font-semibold mb-2">Genuine Quality</h3>
+        <p>We partner with leading manufacturers to ensure every part is authentic and reliable.</p>
+      </div>
+      <div class="p-6 border rounded-lg hover:shadow-lg transition">
+        <h3 class="font-semibold mb-2">Aftermarket Options</h3>
+        <p>We offer cost-effective aftermarket parts without compromising on performance.</p>
+      </div>
+      <div class="p-6 border rounded-lg hover:shadow-lg transition">
+        <h3 class="font-semibold mb-2">Fast Delivery</h3>
+        <p>Get your parts delivered anywhere in UAE.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parts Gallery Section -->
+  <section id="parts" class="bg-red-50 py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6 text-red-600">Our Parts Categories</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+        <!-- Sample cards -->
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition flex flex-col items-center text-center">
+          <img width="128" height="128" src="brakes.png" alt="Brakes" class="mb-4 rounded">
+          <h3 class="font-semibold">Brakes & Suspension</h3>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition flex flex-col items-center text-center">
+          <img width="128" height="128" src="engine.png" alt="Engine Parts" class="mb-4 rounded">
+          <h3 class="font-semibold">Engine Components</h3>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition flex flex-col items-center text-center">
+          <img width="128" height="128" src="filter.png" alt="Filters" class="mb-4 rounded">
+          <h3 class="font-semibold">Filters & Fluids</h3>
+        </div>
+        <!-- Add more categories as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/971500000000?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20car%20parts." target="_blank" class="fixed bottom-8 right-8 bg-green-500 rounded-full p-4 shadow-lg hover:bg-green-600 transition">
+    <i class="fab fa-whatsapp text-white text-2xl"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+      <p>© 2025 Rajani Auto Parts. All rights reserved.</p>
+      <p>Contact us: <a href="mailto:info@dubaicarparts.ae" class="underline hover:text-red-400">info@dubaicarparts.ae</a></p>
+    </div>
+  </footer>
+
+  <!-- Mobile menu toggle script -->
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
