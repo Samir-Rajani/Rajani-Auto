@@ -1,24 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Auto Spare Parts - Online Store Genuine &amp; Aftermarket Car Parts | .COM</title>
+
+  
+  
+  <!-- Open Graph for Facebook, LinkedIn, WhatsApp shares -->
+  <meta property="og:title" content="Rajani Auto Parts – Genuine & Aftermarket Car Parts UAE">
+  <meta property="og:description" content="Fast delivery across the UAE. Submit your parts request and get a quote within minutes.">
+  <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:type" content="website">
+  <meta name="description" content="Rajani Auto Parts LLC – Your trusted source for genuine and aftermarket car parts across the UAE. Fast delivery and instant quotes.">
+  <meta name="keywords" content="dubai car parts, toyota dubai, auto parts, car parts, genuine parts, aftermarket parts, UAE">
+
+  <!-- JSON-LD LocalBusiness + AggregateRating -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoPartsStore",
+    "name": "Rajani Auto Spare Parts LLC",
+    "image": "https://yourdomain.com/logo.png",
+    "telephone": "+971507374077",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sharjah",
+      "addressCountry": "AE"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "50"
+    },
+    "url": "https://yourdomain.com"
+  }
+  </script>
+
+  <!-- Faviocon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" href="favicon.ico">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" media="all">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  
+  <style>
+    img {
+      transition: transform 0.5s ease;
+    }
+    img:hover {
+      transform: scale(1.05);
+      z-index: 2;
+    }
+    body{
+      font-family: "Exo 2", sans-serif;
+      line-height: 1.6;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 1rem;
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<body class="bg-white text-gray-800">
   <!-- Header -->
-  <header class="bg-white shadow">
+  <header class="bg-white shadow-xl">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
       <a href="#" class="text-2xl font-bold text-red-600">Rajani Auto Parts</a>
+      <div id="top_row" class="hidden md:flex items-center space-x-6">
+        <!-- Location -->
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-location-dot text-gray-800"></i>
+          <span class="text-gray-800">Sharjah, UAE</span>
+        </div>
+        <!-- WhatsApp -->
+        <div class="flex items-center space-x-2">
+          <a href="https://wa.me/" class="flex items-center space-x-2 text-gray-800">
+            <i class="fab fa-whatsapp"></i>
+            <span>+971 50 7374077</span>
+          </a>
+        </div>
+      </div>
       <nav class="hidden md:flex space-x-6">
         <a href="#home" class="hover:text-red-600">Home</a>
         <a href="#about" class="hover:text-red-600">About</a>
-        <a href="#parts" class="hover:text-red-600">Parts</a>
         <a href="#contact" class="hover:text-red-600">Contact</a>
       </nav>
       <button class="md:hidden" id="menu-btn">
@@ -29,21 +100,20 @@
     <div class="md:hidden hidden" id="mobile-menu">
       <a href="#home" class="block px-4 py-2 hover:bg-red-50">Home</a>
       <a href="#about" class="block px-4 py-2 hover:bg-red-50">About</a>
-      <a href="#parts" class="block px-4 py-2 hover:bg-red-50">Parts</a>
       <a href="#contact" class="block px-4 py-2 hover:bg-red-50">Contact</a>
     </div>
   </header>
 
   <!-- Hero Section with Form -->
   <section id="home" class="bg-red-50">
-    <div class="container mx-auto px-4 py-16 flex flex-col-reverse md:flex-row items-center">
+    <div class="container mx-auto px-4 pt-16 pb-44 flex flex-col-reverse md:flex-row items-center">
       <div class="w-full md:w-1/2">
         <h1 class="text-4xl md:text-5xl font-bold mb-4 text-red-600">Find Your Perfect Car Parts</h1>
         <p class="mb-6">We supply genuine and aftermarket car parts across UAE. Submit your request below and we'll get back to you swiftly.</p>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white p-6 rounded-lg shadow-md">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white p-6 shadow-xl">
           <!-- Car Brand Dropdown -->
           <label for="brand" class="block mb-2 text-gray-700">Car Brand</label>
-          <select name="brand" id="brand" required class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:border-red-300">
+          <select name="brand" id="brand" required class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:ring-red-300">
             <option value="">Select Brand</option>
             <option value="toyota">Toyota</option>
             <option value="honda">Honda</option>
@@ -54,7 +124,7 @@
 
           <!-- Car Model Dropdown -->
           <label for="model" class="block mb-2 text-gray-700">Car Model</label>
-          <select name="model" id="model" required class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:border-red-300">
+          <select name="model" id="model" required class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:ring-red-300">
             <option value="">Select Model</option>
             <option value="corolla">Corolla</option>
             <option value="camry">Camry</option>
@@ -67,23 +137,120 @@
 
           <!-- Parts Description (optional) -->
           <label for="parts" class="block mb-2 text-gray-700">Car Part</label>
-          <textarea name="parts" id="parts" rows="1" placeholder="Specify exact parts or variants" class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:border-red-300 resize-none"></textarea>
+          <textarea name="parts" id="parts" rows="1" placeholder="Specify exact parts or variants" class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:ring-red-300 resize-none"></textarea>
 
           <!-- Phone Number -->
           <label for="phone" class="block mb-2 text-gray-700">Phone Number</label>
-          <input type="tel" name="phone" id="phone" placeholder="+971 50 000 0000" required class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:border-red-300">
+          <input type="tel" name="phone" id="phone" placeholder="+971 50 000 0000" required class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:ring-red-300">
 
           <button type="submit" class="w-full bg-red-600 text-white py-2 rounded font-semibold hover:bg-red-700 transition">Submit Request</button>
         </form>
       </div>
       <div class="w-full md:w-1/2 mb-8 md:mb-0">
-        <img src="home.png" alt="Car Parts" class="rounded">
+        <img src="car2_png.png" alt="Car Parts" class="rounded">
+      </div>
+    </div>
+  </section>
+
+  <!-- Counter Section -->
+    <section id="counter"
+           class="relative pt-16 pb-4">
+    <div class="container mx-auto px-4">
+      <form class="relative bg-white shadow-xl px-8 pt-6 pb-8 mb-4
+                   -mt-36 md:-mt-36 z-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <!-- Years in Business -->
+          <div class="flex flex-col items-center">
+            <i class="fa fa-store text-4xl text-red-600 mb-2"></i>
+            <div class="text-3xl font-bold counter-value" data-suffix="+">25</div>
+            <div class="text-gray-700 uppercase tracking-wide">Years in Business</div>
+          </div>
+          <!-- Google Rating -->
+          <div class="flex flex-col items-center">
+            <i class="fa fa-star text-4xl text-red-600 mb-2"></i>
+            <div class="text-3xl font-bold counter-value">4.9</div>
+            <div class="text-gray-700 uppercase tracking-wide">Google Rating</div>
+          </div>
+          <!-- Google Reviews -->
+          <div class="flex flex-col items-center">
+            <i class="fa-brands fa-google text-4xl text-red-600 mb-2"></i>
+            <div class="text-3xl font-bold counter-value" data-suffix="+">50</div>
+            <div class="text-gray-700 uppercase tracking-wide">Google Reviews</div>
+          </div>
+          <!-- Car Brands -->
+          <div class="flex flex-col items-center">
+            <i class="fa fa-car text-4xl text-red-600 mb-2"></i>
+            <div class="text-3xl font-bold counter-value">28</div>
+            <div class="text-gray-700 uppercase tracking-wide">Car Brands</div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- Brands Section (themed to match) -->
+  <section id="brands" class="bg-white py-8">
+    <div class="container mx-auto px-4">
+      <h2 class="text-center text-2xl font-bold text-red-600 uppercase mb-6">
+        ALL BRANDS AVAILABLE IN GENUINE & AFTERMARKET
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6">
+        <!-- each brand icon sits in a white, rounded card with shadow -->
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="toyota.png" alt="Brand 1" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="honda.png" alt="Brand 2" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="nissan.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="lexus.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="mazda.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="infiniti.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="mitsubishi.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="hyundai.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="kia.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="landrover.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="gmc.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="chevrolet.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="ford.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="audi.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="bmw.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
+        <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
+          <img src="vw.png" alt="Brand 3" class="h-12 object-contain"/>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="container mx-auto px-4 py-16">
+  <section id="about" class="container mx-auto px-4 py-8">
     <h2 class="text-3xl font-bold mb-6 text-red-600">Why Choose Us</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div class="p-6 border rounded-lg hover:shadow-lg transition">
@@ -101,8 +268,8 @@
     </div>
   </section>
 
-  <!-- Parts Gallery Section -->
-  <section id="parts" class="bg-red-50 py-16">
+  <!-- Categories Section -->
+  <section id="parts" class="bg-red-50 py-8">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-6 text-red-600">Our Parts Categories</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
@@ -125,15 +292,15 @@
   </section>
 
   <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/971500000000?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20car%20parts." target="_blank" class="fixed bottom-8 right-8 bg-green-500 rounded-full p-4 shadow-lg hover:bg-green-600 transition">
+  <a href="https://wa.me/971500000000?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20car%20parts." target="_blank" class="fixed bottom-8 right-8 bg-green-500 rounded-full p-4 shadow-lg z-20 hover:bg-green-600 transition">
     <i class="fab fa-whatsapp text-white text-2xl"></i>
   </a>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white py-6">
-    <div class="container mx-auto px-4 text-center">
-      <p>© 2025 Rajani Auto Parts. All rights reserved.</p>
-      <p>Contact us: <a href="mailto:info@dubaicarparts.ae" class="underline hover:text-red-400">info@dubaicarparts.ae</a></p>
+  <footer class="bg-[#202020] text-white text-sm py-6 ">
+    <div class="container mx-auto px-4 flex justify-between">
+      <p class="m-0">COPYRIGHT © 2025 RAJANI AUTO SPARE PARTS LLC. ALL RIGHTS RESERVED. </p>
+      <p class="m-0">Developed by <a href="https://www.linkedin.com/in/SamirRajani" class="hover:underline">Samir</a></p>
     </div>
   </footer>
 
@@ -145,5 +312,48 @@
       menu.classList.toggle('hidden');
     });
   </script>
+
+  <!-- Counter Animation Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter-value');
+    const options  = { root: null, rootMargin: '0px', threshold: 0.5 };
+    let hasStarted = false;
+
+    function animateCounters() {
+      counters.forEach(counter => {
+        const rawText   = counter.textContent.trim();          // e.g. "4.9" or "50"
+        const suffix    = counter.dataset.suffix || '';        // e.g. "+"
+        const value     = parseFloat(rawText);                 // 4.9 or 50
+        const decimals  = (rawText.split('.')[1] || '').length; 
+        const multiplier = Math.pow(10, decimals);             // 10 for one decimal place
+        const target    = Math.round(value * multiplier);      // 49 or 50*1
+        const duration  = 2000;  // total ms for the count
+        const stepTime  = Math.max(Math.floor(duration / target), 20);
+        let count       = 0;
+
+        const timer = setInterval(() => {
+          count++;
+          const display = (count / multiplier).toFixed(decimals);
+          counter.textContent = display + suffix;
+          if (count >= target) clearInterval(timer);
+        }, stepTime);
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !hasStarted) {
+          hasStarted = true;
+          animateCounters();
+        }
+      });
+    }, options);
+
+    observer.observe(document.getElementById('counter'));
+  });
+</script>
+
 </body>
 </html>
+
