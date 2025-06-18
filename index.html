@@ -16,6 +16,16 @@
   <meta name="description" content="Rajani Auto Parts LLC – Your trusted source for genuine and aftermarket car parts across the UAE. Fast delivery and instant quotes.">
   <meta name="keywords" content="dubai car parts, toyota dubai, auto parts, car parts, genuine parts, aftermarket parts, UAE">
 
+  <!-- Slick Slider -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+  />
+
   <!-- JSON-LD LocalBusiness + AggregateRating -->
   <script type="application/ld+json">
   {
@@ -146,8 +156,39 @@
           <button type="submit" class="w-full bg-red-600 text-white py-2 rounded font-semibold hover:bg-red-700 transition">Submit Request</button>
         </form>
       </div>
-      <div class="w-full md:w-1/2 mb-8 md:mb-0">
-        <img src="car2_png.png" alt="Car Parts" class="rounded">
+      <div class="w-1/2 mb-0">
+        <div class="slider overflow-visible h-96">
+          <!-- Slide 1: your original hero -->
+          <div>
+            <img
+              src="car2_png.png"
+              alt="Car Parts"
+              class="w-full"
+            >
+          </div>
+          <div>
+            <img
+              src="parts.png"
+              alt="Aftermarket Auto Parts"
+              class="w-full"
+            >
+          </div>
+          <div>
+            <img
+              src="battery_shadow.png"
+              alt="Spark Plugs"
+              class="w-full"
+            >
+          </div>
+          <div>
+            <img
+              src="dynamo.png"
+              alt="Aftermarket Auto Parts"
+              class=" w-full"
+            >
+          </div>
+          <!-- Add more slides as needed… -->
+        </div>
       </div>
     </div>
   </section>
@@ -180,7 +221,7 @@
           <!-- Car Brands -->
           <div class="flex flex-col items-center">
             <i class="fa fa-car text-4xl text-red-600 mb-2"></i>
-            <div class="text-3xl font-bold counter-value">28</div>
+            <div class="text-3xl font-bold counter-value" data-suffix="+">16</div>
             <div class="text-gray-700 uppercase tracking-wide">Car Brands</div>
           </div>
         </div>
@@ -204,7 +245,7 @@
           <img src="honda.png" alt="Brand 2" class="h-12 object-contain"/>
         </div>
         <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
-          <img src="nissan.png" alt="Brand 3" class="h-12 object-contain"/>
+          <img src="nissan.png" alt="Brand 3" class="h-full object-contain"/>
         </div>
         <div class="bg-white shadow-lg p-4 rounded-2xl flex items-center justify-center">
           <img src="lexus.png" alt="Brand 3" class="h-12 object-contain"/>
@@ -314,46 +355,65 @@
   </script>
 
   <!-- Counter Animation Script -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const counters = document.querySelectorAll('.counter-value');
-    const options  = { root: null, rootMargin: '0px', threshold: 0.5 };
-    let hasStarted = false;
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const counters = document.querySelectorAll('.counter-value');
+      const options  = { root: null, rootMargin: '0px', threshold: 0.5 };
+      let hasStarted = false;
 
-    function animateCounters() {
-      counters.forEach(counter => {
-        const rawText   = counter.textContent.trim();          // e.g. "4.9" or "50"
-        const suffix    = counter.dataset.suffix || '';        // e.g. "+"
-        const value     = parseFloat(rawText);                 // 4.9 or 50
-        const decimals  = (rawText.split('.')[1] || '').length; 
-        const multiplier = Math.pow(10, decimals);             // 10 for one decimal place
-        const target    = Math.round(value * multiplier);      // 49 or 50*1
-        const duration  = 2000;  // total ms for the count
-        const stepTime  = Math.max(Math.floor(duration / target), 20);
-        let count       = 0;
+      function animateCounters() {
+        counters.forEach(counter => {
+          const rawText   = counter.textContent.trim();          // e.g. "4.9" or "50"
+          const suffix    = counter.dataset.suffix || '';        // e.g. "+"
+          const value     = parseFloat(rawText);                 // 4.9 or 50
+          const decimals  = (rawText.split('.')[1] || '').length; 
+          const multiplier = Math.pow(10, decimals);             // 10 for one decimal place
+          const target    = Math.round(value * multiplier);      // 49 or 50*1
+          const duration  = 2000;  // total ms for the count
+          const stepTime  = Math.max(Math.floor(duration / target), 20);
+          let count       = 0;
 
-        const timer = setInterval(() => {
-          count++;
-          const display = (count / multiplier).toFixed(decimals);
-          counter.textContent = display + suffix;
-          if (count >= target) clearInterval(timer);
-        }, stepTime);
+          const timer = setInterval(() => {
+            count++;
+            const display = (count / multiplier).toFixed(decimals);
+            counter.textContent = display + suffix;
+            if (count >= target) clearInterval(timer);
+          }, stepTime);
+        });
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !hasStarted) {
+            hasStarted = true;
+            animateCounters();
+          }
+        });
+      }, options);
+
+      observer.observe(document.getElementById('counter'));
+    });
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.slider').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,      // show “Next”/“Prev” buttons
+        dots: true,        // show pagination dots
+        autoplay: true,
+        autoplaySpeed: 4000,
+        speed: 1000,
+        adaptiveHeight: false,
+        pauseOnFocus: false,
+        pauseOnDotsHover: false
       });
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !hasStarted) {
-          hasStarted = true;
-          animateCounters();
-        }
-      });
-    }, options);
-
-    observer.observe(document.getElementById('counter'));
-  });
-</script>
-
+    });
+  </script>
 </body>
 </html>
 
