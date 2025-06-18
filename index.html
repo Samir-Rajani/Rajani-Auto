@@ -156,35 +156,35 @@
           <button type="submit" class="w-full bg-red-600 text-white py-2 rounded font-semibold hover:bg-red-700 transition">Submit Request</button>
         </form>
       </div>
-      <div class="w-1/2 mb-0">
-        <div class="slider overflow-visible h-96">
+      <div class="w-full md:w-1/2 mb-0">
+        <div class="slider overflow-visible h-64 md:h-96">
           <!-- Slide 1: your original hero -->
           <div>
             <img
               src="car2_png.png"
               alt="Car Parts"
-              class="w-full"
+              class="w-full h-auto object-cover"
             >
           </div>
           <div>
             <img
               src="parts.png"
               alt="Aftermarket Auto Parts"
-              class="w-full"
+              class="w-full h-auto object-cover"
             >
           </div>
           <div>
             <img
               src="battery_shadow.png"
               alt="Spark Plugs"
-              class="w-full"
+              class="w-full h-auto object-cover"
             >
           </div>
           <div>
             <img
               src="dynamo.png"
               alt="Aftermarket Auto Parts"
-              class=" w-full"
+              class="w-full h-auto object-cover"
             >
           </div>
           <!-- Add more slides as needed… -->
@@ -408,7 +408,7 @@
         autoplay: true,
         autoplaySpeed: 4000,
         speed: 1000,
-        adaptiveHeight: false,
+        adaptiveHeight: true,
         pauseOnFocus: false,
         pauseOnDotsHover: false
       });
