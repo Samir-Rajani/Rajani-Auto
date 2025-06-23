@@ -1,0 +1,17 @@
+img {
+    transition: transform 0.5s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+body {
+    font-family: "Exo 2", sans-serif;
+    line-height: 1.6;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+}
