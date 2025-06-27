@@ -74,6 +74,20 @@ document.getElementById('car-form').addEventListener('submit', function (e) {
     window.open(url, '_blank');
 });
 
+document.querySelectorAll('.learn-more-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const part = btn.dataset.part || 'N/A';
+    const messageLines = [
+      'Hello, I would like to inquire about car parts.',
+      `Part: ${part}`
+    ];
+    const msg  = messageLines.join('\n');
+    const url  = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
+    window.open(url, '_blank');
+  });
+});
+
 // Dependent Dropdown Script (update IDs accordingly)
 // --- utility: convert hyphenated or spaced strings to camelCase --- 
 function toCamelCase(str) {

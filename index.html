@@ -45,7 +45,7 @@
   </script>
 
   <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images\favicon.ico" type="image/x-icon">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -59,13 +59,33 @@
 
   <link rel="stylesheet" href="css/style.css">
 
+    <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'ar,ru',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script
+    type="text/javascript"
+    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script>
+
 </head>
 
 <body class="bg-white text-black">
   <!-- Header -->
   <header class="bg-white">
     <div class="container mx-auto px-4 py-2 flex items-center justify-between">
-      <a href="#"><img src="images/RajaniAutoLogoSVG.svg" alt="Rajani Auto Parts" class="h-12"></a>
+      <button class="md:hidden order-1" id="menu-btn">
+        <i class="fas fa-bars text-black text-xl"></i>
+      </button>
+      <a href="#" class="order-2 mr-auto ml-2 md:ml-0 md:order-none md:mr-0">
+        <img src="images/RajaniAutoLogoSVG.svg" alt="Rajani Auto Parts" class="h-12">
+      </a>
       <!--<a href="#" class="text-4xl font-bold text-red-600 p-2"><span class="bg-red-600 font-bold text-white p-2">Rajani</span> Auto</a>-->
 
       <div id="top_row" class="hidden md:flex items-center space-x-6">
@@ -76,8 +96,8 @@
         </div>
         <!-- WhatsApp -->
         <div class="flex items-center space-x-2">
-          <a href="https://wa.me/971553023403?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20car%20parts."
-            class="flex items-center space-x-2 text-black">
+          <a href="#"
+            class="learn-more-btn flex items-center space-x-2 text-black">
             <i class="fab fa-whatsapp"></i>
             <span>+971 55 3023403</span>
           </a>
@@ -88,14 +108,27 @@
         <a href="#about" class="hover:text-red-600">About</a>
         <a href="#contact" class="hover:text-red-600">Contact</a>
       </nav>
-      <button class="md:hidden" id="menu-btn">
-        <i class="fas fa-bars text-black text-xl"></i>
-      </button>
+      <!-- Google Translate -->
+      <div  class="order-3 md:order-none flex items-center space-x-4">
+        <div id="google_translate_element"></div>
+      </div>
     </div>
 
 
     <!-- Mobile Menu -->
     <div class="md:hidden hidden" id="mobile-menu">
+      <!-- Location & WhatsApp for mobile -->
+      <div class="px-4 py-2 border-b border-gray-200">
+        <div class="flex items-center space-x-2 mb-1">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Sharjah, UAE</span>
+        </div>
+        <a href="#"
+          class="learn-more-btn flex items-center space-x-2">
+          <i class="fab fa-whatsapp"></i>
+          <span>971 55 3023403</span>
+        </a>
+      </div>
       <a href="#home" class="block px-4 py-2 hover:bg-red-50">Home</a>
       <a href="#about" class="block px-4 py-2 hover:bg-red-50">About</a>
       <a href="#contact" class="block px-4 py-2 hover:bg-red-50">Contact</a>
@@ -140,7 +173,7 @@
           <h1 class="text-2xl md:text-3xl text-center font-bold mb-4 text-red-600">Search Your Part Here</h1>
           <div class="form-group relative">
             <label for="brand" class="sr-only">Select Brand</label>
-            <select name="brand" id="brand" required
+            <select name="brand" id="brand"
               class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:ring-red-300">
               <option value="">Select Brand</option>
               <option value="audi">Audi</option>
@@ -166,7 +199,7 @@
           <!-- Car Model Dropdown -->
           <div class="form-group relative">
             <label for="model" class="sr-only">Select Model</label>
-            <select name="model" id="model" required
+            <select name="model" id="model"
               class="w-full p-2 border border-gray-300 rounded mb-4 focus:outline-none focus:ring focus:ring-red-300">
               <option value="">Select Model</option>
               <!-- Add more models manually here -->
@@ -311,101 +344,201 @@
   <!-- Categories Section -->
   <section id="parts" class="bg-red-50 py-8">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-6 text-red-600">Our Parts Categories</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+      <h2 class="text-3xl font-bold mb-6 text-red-600">Parts Categories</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 xl:px-0 text-center">
         <!-- Sample cards -->
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition flex flex-col items-center text-center">
-          <img src="images/brakepad.png" alt="Brakes" class="mb-4 rounded w-32 h-32 object-contain">
-          <h3 class="font-semibold">Brakes & Suspension</h3>
-          <a href="https://wa.me/971553023403?text=${encodeURIComponent('Hello, I would like to inquire about car parts.')}"
-            class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
-            Learn More
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-              fill="none" viewBox="0 0 14 10">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M1 5h12m0 0L9 1m4 4L9 9" />
-            </svg>
-          </a>
-        </div>
+        <article class="justify-between h-full bg-white p-6 rounded-2xl shadow hover:shadow-lg transition flex flex-col">
+          
+          <!-- top block: image + title -->
+          <div class="flex flex-col items-center text-center">
+            <!-- fixed-size container for the image -->
+            <div class="w-26 h-26 sm:w-30 sm:h-30 md:w-34 md:h-34 mb-4">
+              <img src="images/brakepad.png" alt="Brake Pads & Discs" class="w-full h-full object-contain">
+            </div>
+            <h3 class="font-semibold text-lg mb-4">Brake Pads & Discs</h3>
+          </div>
 
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition flex flex-col items-center text-center">
-          <img src="images/alternator.webp" alt="Dynamo" class="mb-4 rounded w-32 h-32 object-contain">
-          <h3 class="font-semibold">Alternators & Motors</h3>
-          <a href="https://wa.me/971553023403?text=${encodeURIComponent('Hello, I would like to inquire about car parts.')}"
-            class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+          <a href="#"
+            data-part="Brake Pads & Discs"
+            class="learn-more-btn px-5 py-2.5 bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300
+             text-white font-medium rounded-lg text-sm inline-flex items-center justify-center">
             Learn More
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
               fill="none" viewBox="0 0 14 10">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M1 5h12m0 0L9 1m4 4L9 9" />
             </svg>
           </a>
-        </div>
+        </article>
 
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition flex flex-col items-center text-center">
-          <img src="images/headlight.png" alt="Brakes" class="mb-4 rounded w-32 h-32 object-contain">
-          <h3 class="font-semibold">Body & Trim</h3>
-          <a href="https://wa.me/971553023403?text=${encodeURIComponent('Hello, I would like to inquire about car parts.')}"
-            class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+        <article class="justify-between h-full bg-white p-6 rounded-2xl shadow hover:shadow-lg transition flex flex-col">
+          
+          <!-- top block: image + title -->
+          <div class="flex flex-col items-center text-center">
+            <!-- fixed-size container for the image -->
+            <div class="w-26 h-26 sm:w-30 sm:h-30 md:w-34 md:h-34 mb-4">
+              <img src="images/alternator.webp" alt="Transmission & Drivetrain" class="w-full h-full object-contain">
+            </div>
+            <h3 class="font-semibold text-lg mb-4">Transmission & Drivetrain</h3>
+          </div>
+          <a href="#"
+            data-part="Transmission & Drivetrain"
+            class="learn-more-btn px-5 py-2.5 bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300
+             text-white font-medium rounded-lg text-sm inline-flex items-center justify-center">
             Learn More
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
               fill="none" viewBox="0 0 14 10">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M1 5h12m0 0L9 1m4 4L9 9" />
             </svg>
           </a>
-        </div>
+        </article>
 
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition flex flex-col items-center text-center">
-          <img src="images/shockabsorber.png" alt="Shock Absorbers" class="mb-4 rounded w-32 h-32 object-contain">
-          <h3 class="font-semibold">Shock Absorbers</h3>
-          <a href="https://wa.me/971553023403?text=${encodeURIComponent('Hello, I would like to inquire about car parts.')}"
-            class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+        <article class="justify-between h-full bg-white p-6 rounded-2xl shadow hover:shadow-lg transition flex flex-col">
+          
+          <!-- top block: image + title -->
+          <div class="flex flex-col items-center text-center">
+            <!-- fixed-size container for the image -->
+            <div class="w-26 h-26 sm:w-30 sm:h-30 md:w-34 md:h-34 mb-4">
+              <img src="images/headlight.png" alt="Engine & Components" class="w-full h-full object-contain">
+            </div>
+            <h3 class="font-semibold text-lg mb-4">Engine & Components</h3>
+          </div>
+          <a href="#"
+            data-part="Engine & Components"
+            class="learn-more-btn px-5 py-2.5 bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300
+             text-white font-medium rounded-lg text-sm inline-flex items-center justify-center">
             Learn More
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
               fill="none" viewBox="0 0 14 10">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M1 5h12m0 0L9 1m4 4L9 9" />
             </svg>
           </a>
-        </div>
+        </article>
 
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition flex flex-col items-center text-center">
-          <img src="images/oil.jpg" alt="Oil & Lubricants" class="mb-4 rounded w-32 h-32 object-contain">
-          <h3 class="font-semibold">Oil & Lubricants</h3>
-          <a href="https://wa.me/971553023403?text=${encodeURIComponent('Hello, I would like to inquire about car parts.')}"
-            class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+        <article class="justify-between h-full bg-white p-6 rounded-2xl shadow hover:shadow-lg transition flex flex-col">
+          
+          <!-- top block: image + title -->
+          <div class="flex flex-col items-center text-center">
+            <!-- fixed-size container for the image -->
+            <div class="w-26 h-26 sm:w-30 sm:h-30 md:w-34 md:h-34 mb-4">
+              <img src="images/shockabsorber.png" alt="Suspension, Shocks & Struts" class="w-full h-full object-contain">
+            </div>
+            <h3 class="font-semibold text-lg mb-4">Suspension, Shocks & Struts</h3>
+          </div>
+          <a href="#"
+            data-part="Suspension, Shocks & Struts"
+            class="learn-more-btn px-5 py-2.5 bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300
+             text-white font-medium rounded-lg text-sm inline-flex items-center justify-center">
             Learn More
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
               fill="none" viewBox="0 0 14 10">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M1 5h12m0 0L9 1m4 4L9 9" />
             </svg>
           </a>
-        </div>
+        </article>
 
-        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition flex flex-col items-center text-center">
-          <img src="images/batterypng.png" alt="Brakes" class="mb-4 rounded w-32 h-32 object-contain">
-          <h3 class="font-semibold">Batteries & Accessories</h3>
-          <a href="https://wa.me/971553023403?text=${encodeURIComponent('Hello, I would like to inquire about car parts.')}"
-            class="text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">
+        <article class="justify-between h-full bg-white p-6 rounded-2xl shadow hover:shadow-lg transition flex flex-col">
+          
+          <!-- top block: image + title -->
+          <div class="flex flex-col items-center text-center">
+            <!-- fixed-size container for the image -->
+            <div class="w-26 h-26 sm:w-30 sm:h-30 md:w-34 md:h-34 mb-4">
+              <img src="images/oil.jpg" alt="Oil & Lubricants" class="w-full h-full object-contain">
+            </div>
+            <h3 class="font-semibold text-lg mb-4">Oil & Lubricants</h3>
+          </div>
+          <a href="#"
+            data-part="Oil & Lubricants"
+            class="learn-more-btn px-5 py-2.5 bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300
+             text-white font-medium rounded-lg text-sm inline-flex items-center justify-center">
             Learn More
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
               fill="none" viewBox="0 0 14 10">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M1 5h12m0 0L9 1m4 4L9 9" />
             </svg>
           </a>
-        </div>
+        </article>
+
+        <article class="justify-between h-full bg-white p-6 rounded-2xl shadow hover:shadow-lg transition flex flex-col">
+          
+          <!-- top block: image + title -->
+          <div class="flex flex-col items-center text-center">
+            <!-- fixed-size container for the image -->
+            <div class="w-26 h-26 sm:w-30 sm:h-30 md:w-34 md:h-34 mb-4">
+              <img src="images/batterypng.png" alt="Electrical Systems & Batteries" class="w-full h-full object-contain">
+            </div>
+            <h3 class="font-semibold text-lg mb-4">Electrical Systems & Batteries</h3>
+          </div>
+          <a href="#"
+            data-part="Electrical Systems & Batteries"
+            class="learn-more-btn px-5 py-2.5 bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300
+             text-white font-medium rounded-lg text-sm inline-flex items-center justify-center">
+            Learn More
+            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+          </a>
+        </article>
+
+        <article class="justify-between h-full bg-white p-6 rounded-2xl shadow hover:shadow-lg transition flex flex-col">
+          
+          <!-- top block: image + title -->
+          <div class="flex flex-col items-center text-center">
+            <!-- fixed-size container for the image -->
+            <div class="w-26 h-26 sm:w-30 sm:h-30 md:w-34 md:h-34 mb-4">
+              <img src="images/car_keys.png" alt="Security & Keys" class="w-full h-full object-contain">
+            </div>
+            <h3 class="font-semibold text-lg mb-4">Security & Keys</h3>
+          </div>
+          <a href="#"
+            data-part="Security & Keys"
+            class="learn-more-btn px-5 py-2.5 bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300
+             text-white font-medium rounded-lg text-sm inline-flex items-center justify-center">
+            Learn More
+            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+          </a>
+        </article>        
+
+        <article class="justify-between h-full bg-white p-6 rounded-2xl shadow hover:shadow-lg transition flex flex-col">
+          
+          <!-- top block: image + title -->
+          <div class="flex flex-col items-center text-center">
+            <!-- fixed-size container for the image -->
+            <div class="w-26 h-26 sm:w-30 sm:h-30 md:w-34 md:h-34 mb-4">
+              <img src="images/accessories.png" alt="Accessories" class="w-full h-full object-contain">
+            </div>
+            <h3 class="font-semibold text-lg mb-4">Accessories</h3>
+          </div>
+          <a href="#"
+            data-part="Accessories"
+            class="learn-more-btn px-5 py-2.5 bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300
+             text-white font-medium rounded-lg text-sm inline-flex items-center justify-center">
+            Learn More
+            <svg class="rtl:rotate-180 w-4 h-4 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              fill="none" viewBox="0 0 14 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9" />
+            </svg>
+          </a>
+        </article>          
         <!-- Add more categories as needed -->
       </div>
     </div>
   </section>
 
   <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/971553023403?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20car%20parts."
-    target="_blank"
-    class="fixed bottom-8 right-8 bg-green-500 rounded-full p-4 shadow-lg z-20 hover:bg-green-600 transition">
+  <a href="#"
+    class="learn-more-btn fixed bottom-8 right-8 bg-green-500 rounded-full p-4 shadow-lg z-20 hover:bg-green-600 transition">
     <i class="fab fa-whatsapp text-white text-2xl"></i>
   </a>
 
